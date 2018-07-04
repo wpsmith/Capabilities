@@ -2,7 +2,7 @@
 /**
  * Capabilities Manager VIP Class
  *
- * Assists in the creation and management of Capabilities in WP VIP.
+ * Assists in the creation and management of Capabilities in WP.com VIP.
  * The contents of this class is largely borrowed from WordPress SEO (WPSEO\Admin\Capabilities).
  *
  * You may copy, distribute and modify the software as long as you track changes/dates in source files.

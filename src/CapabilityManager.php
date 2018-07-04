@@ -33,7 +33,7 @@ if ( ! class_exists( 'WPS\Capabilities\CapabilityManager' ) ) {
 	class CapabilityManager extends Base {
 
 		/**
-		 * CapabilityManager constructor.
+		 * CapabilityManagerInterface constructor.
 		 */
 		protected function __construct() {
 			self::get();
@@ -42,16 +42,16 @@ if ( ! class_exists( 'WPS\Capabilities\CapabilityManager' ) ) {
 		/**
 		 * Returns the Manager to use.
 		 *
-		 * @return CapabilityManagerVIP|CapabilityManagerWP Manager to use.
+		 * @return CapabilityManager Manager to use.
 		 */
-		protected static function get() {
+		public static function get() {
 			static $manager = null;
 
 			if ( null === $manager ) {
 				if ( function_exists( 'wpcom_vip_add_role_caps' ) ) {
-					$manager = new CapabilityManagerVIP();
+					$manager = CapabilityManagerVIP::get_instance();
 				} else {
-					$manager = new CapabilityManagerWP();
+					$manager = CapabilityManagerWP::get_instance();
 				}
 			}
 
